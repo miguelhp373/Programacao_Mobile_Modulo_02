@@ -1,0 +1,5 @@
+inherited Form1_SSW3: TForm1_SSW3
+  ClientHeight = 183
+  ClientWidth = 183
+  DesignerMasterStyle = 0
+end
