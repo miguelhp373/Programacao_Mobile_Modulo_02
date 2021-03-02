@@ -1,0 +1,193 @@
+unit Unit1;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Controls.Presentation, FMX.Edit;
+
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    Button7: TButton;
+    Button8: TButton;
+    Button9: TButton;
+    Button10: TButton;
+    Button11: TButton;
+    Button12: TButton;
+    Button13: TButton;
+    Button14: TButton;
+    Button15: TButton;
+    Button16: TButton;
+    Button17: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
+    procedure Button9Click(Sender: TObject);
+    procedure Button10Click(Sender: TObject);
+    procedure Button14Click(Sender: TObject);
+    procedure Button13Click(Sender: TObject);
+    procedure Button12Click(Sender: TObject);
+    procedure Button11Click(Sender: TObject);
+    procedure Button17Click(Sender: TObject);
+    procedure Button15Click(Sender: TObject);
+    procedure Button16Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  Signal:String;
+  n1,n2,result:Double;
+
+implementation
+
+{$R *.fmx}
+{$R *.LgXhdpiPh.fmx ANDROID}
+{$R *.LgXhdpiTb.fmx ANDROID}
+{$R *.SmXhdpiPh.fmx ANDROID}
+{$R *.SSW3.fmx ANDROID}
+
+
+
+procedure TForm1.Button11Click(Sender: TObject);//Division Operation
+begin
+Signal:='Division';
+Button15.Enabled := True;
+n1:= StrToFloat(Edit1.Text);
+Edit1.Text := '';
+end;
+
+procedure TForm1.Button12Click(Sender: TObject);//Multiplication Operation
+begin
+Signal:='Multiplication';
+Button15.Enabled := True;
+n1:= StrToFloat(Edit1.Text);
+Edit1.Text := '';
+end;
+
+procedure TForm1.Button13Click(Sender: TObject);//Minus Operation
+begin
+Signal:='Minus';
+Button15.Enabled := True;
+n1:= StrToFloat(Edit1.Text);
+Edit1.Text := '';
+end;
+
+procedure TForm1.Button14Click(Sender: TObject);//Plus Operation
+begin
+Signal:= 'Plus';
+Button15.Enabled := True;
+n1:= StrToFloat(Edit1.Text);
+Edit1.Text := '';
+end;
+
+procedure TForm1.Button15Click(Sender: TObject);//Result
+begin
+n2:= StrToFloat(Edit1.Text);
+
+if(Signal = 'Plus')Then
+begin
+result := n1 + n2;
+Edit1.Text := FloatToStr(result);
+end;
+if(Signal = 'Minus')Then
+begin
+  result := n1 - n2;
+  Edit1.Text := FloatToStr(result);
+end;
+if(Signal = 'Multiplication') Then
+begin
+  result := n1 * n2;
+  Edit1.Text := FloatToStr(result);
+end;
+if(Signal = 'Division')Then
+begin
+  result := n1/n2;
+  Edit1.Text := FloatToStr(result);
+end;
+
+end;
+
+procedure TForm1.Button16Click(Sender: TObject);//dot
+begin
+Edit1.Text:= Edit1.Text + ',';
+end;
+
+procedure TForm1.Button17Click(Sender: TObject);//Clear
+begin
+Edit1.Text:= '';
+Signal:='';
+n1:= 0;
+n2:= 0;
+Button15.Enabled := False;
+end;
+
+procedure TForm1.Button10Click(Sender: TObject);//Add 0
+begin
+Edit1.Text := Edit1.Text + '0';
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);//Add 1
+begin
+Edit1.Text := Edit1.Text + Button1.Text;
+end;
+
+
+
+procedure TForm1.Button2Click(Sender: TObject);//Add 2
+begin
+Edit1.Text := Edit1.Text + Button2.Text;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);//Add 3
+begin
+Edit1.Text := Edit1.Text + Button3.Text;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);//Add 4
+begin
+Edit1.Text := Edit1.Text + Button4.Text;
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);//Add 5
+begin
+Edit1.Text := Edit1.Text + Button5.Text;
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);//Add 6
+begin
+Edit1.Text := Edit1.Text + Button6.Text;
+end;
+
+procedure TForm1.Button7Click(Sender: TObject);//Add 7
+begin
+Edit1.Text := Edit1.Text + Button7.Text;
+end;
+
+procedure TForm1.Button8Click(Sender: TObject);//Add 8
+begin
+Edit1.Text := Edit1.Text + Button8.Text;
+end;
+
+procedure TForm1.Button9Click(Sender: TObject);//Add 9
+begin
+Edit1.Text := Edit1.Text + Button9.Text;
+end;
+
+end.

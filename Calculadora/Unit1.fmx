@@ -178,7 +178,7 @@ object Form1: TForm1
     Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 16
-    Text = ','
+    Text = '.'
     OnClick = Button16Click
   end
   object Button17: TButton

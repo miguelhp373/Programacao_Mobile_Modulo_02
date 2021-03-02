@@ -126,7 +126,7 @@ end;
 
 procedure TForm1.Button16Click(Sender: TObject);//dot
 begin
-Edit1.Text:= Edit1.Text + ',';
+Edit1.Text:= Edit1.Text + '.';
 end;
 
 procedure TForm1.Button17Click(Sender: TObject);//Clear

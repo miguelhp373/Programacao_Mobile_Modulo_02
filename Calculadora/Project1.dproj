@@ -169,11 +169,11 @@
     <PropertyGroup Condition="'$(Cfg_1_Android)'!=''">
         <VerInfo_Build>1</VerInfo_Build>
         <VerInfo_Keys>package=com.embarcadero.CalculadoraV1;label=CalculadoraV1;versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
-        <Android_LauncherIcon36>packicons\icon36x36.png</Android_LauncherIcon36>
-        <Android_LauncherIcon48>packicons\icon48x48.png</Android_LauncherIcon48>
-        <Android_LauncherIcon72>packicons\icon72x72.png</Android_LauncherIcon72>
-        <Android_LauncherIcon96>packicons\icon96x96.png</Android_LauncherIcon96>
-        <Android_LauncherIcon144>packicons\icon144x144.png</Android_LauncherIcon144>
+        <Android_LauncherIcon36>packicons\Mobile\icon36x36.png</Android_LauncherIcon36>
+        <Android_LauncherIcon48>packicons\Mobile\icon48x48.png</Android_LauncherIcon48>
+        <Android_LauncherIcon72>packicons\Mobile\icon72x72.png</Android_LauncherIcon72>
+        <Android_LauncherIcon96>packicons\Mobile\icon96x96.png</Android_LauncherIcon96>
+        <Android_LauncherIcon144>packicons\Mobile\icon144x144.png</Android_LauncherIcon144>
         <Android_SplashTileMode>disabled</Android_SplashTileMode>
         <IncludeAndroid_Splash>False</IncludeAndroid_Splash>
         <Android_NotificationAccentColor>#000000</Android_NotificationAccentColor>
@@ -186,6 +186,12 @@
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=MiguelHP Sistems;FileDescription=$(CalculadoraV1);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(CalculadoraV1);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <UWP_DelphiLogo44>packicons\Mobile\icon48x48.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>packicons\Mobile\icon144x144.png</UWP_DelphiLogo150>
+        <Icon_MainIcon>Project1_Icon2.ico</Icon_MainIcon>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -241,13 +247,21 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="packicons\icon36x36.png" Configuration="Debug" Class="Android_LauncherIcon36">
-                    <Platform Name="Android">
-                        <RemoteName>ic_launcher.png</RemoteName>
+                <DeployFile LocalName="packicons\Mobile\icon48x48.png" Configuration="Debug" Class="UWP_DelphiLogo44">
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo44x44.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="packicons\icon72x72.png" Configuration="Debug" Class="Android_LauncherIcon72">
+                <DeployFile LocalName="packicons\Mobile\icon144x144.png" Configuration="Debug" Class="UWP_DelphiLogo150">
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo150x150.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="packicons\Mobile\icon72x72.png" Configuration="Debug" Class="Android_LauncherIcon72">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -277,15 +291,15 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Configuration="Debug" Class="Android_NotificationIcon36">
+                <DeployFile LocalName="packicons\Mobile\icon36x36.png" Configuration="Debug" Class="Android_LauncherIcon36">
                     <Platform Name="Android">
-                        <RemoteName>ic_notification.png</RemoteName>
+                        <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="packicons\icon48x48.png" Configuration="Debug" Class="Android_LauncherIcon48">
+                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Configuration="Debug" Class="Android_NotificationIcon36">
                     <Platform Name="Android">
-                        <RemoteName>ic_launcher.png</RemoteName>
+                        <RemoteName>ic_notification.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -312,6 +326,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="packicons\Mobile\icon96x96.png" Configuration="Debug" Class="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteName>ic_launcher.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Configuration="Debug" Class="Android_NotificationIcon96">
                     <Platform Name="Android">
                         <RemoteName>ic_notification.png</RemoteName>
@@ -320,12 +340,6 @@
                 </DeployFile>
                 <DeployFile LocalName="Android\Debug\AndroidManifest.xml" Configuration="Debug" Class="ProjectAndroidManifest">
                     <Platform Name="Android">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="packicons\icon144x144.png" Configuration="Debug" Class="Android_LauncherIcon144">
-                    <Platform Name="Android">
-                        <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -367,15 +381,21 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="packicons\icon96x96.png" Configuration="Debug" Class="Android_LauncherIcon96">
+                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Configuration="Debug" Class="Android_NotificationIcon48">
+                    <Platform Name="Android">
+                        <RemoteName>ic_notification.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="packicons\Mobile\icon144x144.png" Configuration="Debug" Class="Android_LauncherIcon144">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Configuration="Debug" Class="Android_NotificationIcon48">
+                <DeployFile LocalName="packicons\Mobile\icon48x48.png" Configuration="Debug" Class="Android_LauncherIcon48">
                     <Platform Name="Android">
-                        <RemoteName>ic_notification.png</RemoteName>
+                        <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
