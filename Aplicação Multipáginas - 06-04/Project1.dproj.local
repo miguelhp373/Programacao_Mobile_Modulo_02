@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2021/03/24 10:06:53.398,=C:\Users\migue\OneDrive\Documentos\Projetos\Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/03/24 10:07:56.523,C:\Users\migue\OneDrive\Documentos\Projetos Etec\Programacao_Mobile_Modulo_02\Lista de Imagens - 06-04\Unit1.pas=C:\Users\migue\OneDrive\Documentos\Projetos\Delphi\Unit1.pas</Transaction>
+    <Transaction>2021/03/24 10:07:56.523,C:\Users\migue\OneDrive\Documentos\Projetos Etec\Programacao_Mobile_Modulo_02\Lista de Imagens - 06-04\Unit1.fmx=C:\Users\migue\OneDrive\Documentos\Projetos\Delphi\Unit1.fmx</Transaction>
+    <Transaction>2021/03/24 10:07:58.837,C:\Users\migue\OneDrive\Documentos\Projetos Etec\Programacao_Mobile_Modulo_02\Lista de Imagens - 06-04\Project1.dproj=C:\Users\migue\OneDrive\Documentos\Projetos\Delphi\Project1.dproj</Transaction>
+    <Transaction>2021/03/24 10:41:01.607,=C:\Users\migue\OneDrive\Documentos\Projetos Etec\Programacao_Mobile_Modulo_02\Lista de Imagens - 06-04\Unit2.pas</Transaction>
+    <Transaction>2021/03/24 10:42:42.474,=C:\Users\migue\OneDrive\Documentos\Projetos Etec\Programacao_Mobile_Modulo_02\Lista de Imagens - 06-04\Unit3.pas</Transaction>
+    <Transaction>2021/03/24 10:43:19.149,=C:\Users\migue\OneDrive\Documentos\Projetos Etec\Programacao_Mobile_Modulo_02\Lista de Imagens - 06-04\Unit4.pas</Transaction>
+    <Transaction>2021/03/24 10:44:17.956,=C:\Users\migue\OneDrive\Documentos\Projetos Etec\Programacao_Mobile_Modulo_02\Lista de Imagens - 06-04\Unit5.pas</Transaction>
+    <Transaction>2021/03/24 11:47:59.375,=C:\Users\migue\OneDrive\Documentos\Projetos Etec\Programacao_Mobile_Modulo_02\Lista de Imagens - 06-04\Unit6.pas</Transaction>
+    <Transaction>2021/03/24 12:02:33.933,=C:\Users\migue\OneDrive\Documentos\Projetos Etec\Programacao_Mobile_Modulo_02\Lista de Imagens - 06-04\Unit7.pas</Transaction>
+  </Transactions>
+  <ActiveMobileDevice>   <NoProfile Android="4200944ba8556497"/>
+  </ActiveMobileDevice>
+</BorlandProject>

@@ -1,0 +1,33 @@
+unit Unit2;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Layouts, FMX.Objects, FMX.Controls.Presentation;
+
+type
+  Tapple = class(TForm)
+    ToolBar1: TToolBar;
+    Image1: TImage;
+    GridPanelLayout1: TGridPanelLayout;
+    Button1: TButton;
+    Image2: TImage;
+    Image3: TImage;
+    Panel1: TPanel;
+    Panel2: TPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  apple: Tapple;
+
+implementation
+
+{$R *.fmx}
+
+end.
