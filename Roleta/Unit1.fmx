@@ -267,21 +267,20 @@ object Form1: TForm1
     Enabled = False
     Interval = 50
     OnTimer = Timer1Timer
-    Left = 48
     Top = 40
   end
   object Timer2: TTimer
     Enabled = False
     Interval = 75
     OnTimer = Timer2Timer
-    Left = 80
+    Left = 32
     Top = 40
   end
   object Timer3: TTimer
     Enabled = False
     Interval = 100
     OnTimer = Timer3Timer
-    Left = 112
+    Left = 64
     Top = 40
   end
   object ImageList1: TImageList
@@ -289,7 +288,6 @@ object Form1: TForm1
       item
         MultiResBitmap.Height = 100
         MultiResBitmap.Width = 100
-        MultiResBitmap.LoadSize = 0
         MultiResBitmap = <
           item
             Width = 100
@@ -826,10 +824,8 @@ object Form1: TForm1
       item
         MultiResBitmap.Height = 100
         MultiResBitmap.Width = 100
-        MultiResBitmap.LoadSize = 0
         MultiResBitmap = <
           item
-            Scale = 2.000000000000000000
             Width = 100
             Height = 100
             PNG = {
@@ -1330,10 +1326,8 @@ object Form1: TForm1
       item
         MultiResBitmap.Height = 100
         MultiResBitmap.Width = 100
-        MultiResBitmap.LoadSize = 0
         MultiResBitmap = <
           item
-            Scale = 2.000000000000000000
             Width = 100
             Height = 100
             PNG = {
@@ -1802,10 +1796,8 @@ object Form1: TForm1
       item
         MultiResBitmap.Height = 100
         MultiResBitmap.Width = 100
-        MultiResBitmap.LoadSize = 0
         MultiResBitmap = <
           item
-            Scale = 2.000000000000000000
             Width = 100
             Height = 100
             PNG = {
@@ -5044,7 +5036,7 @@ object Form1: TForm1
         Name = 'Item 8'
       end>
     Destination = <>
-    Left = 8
+    Left = 96
     Top = 40
   end
 end

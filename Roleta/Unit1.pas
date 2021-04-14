@@ -55,14 +55,18 @@ implementation
 
 {$R *.fmx}
 
+
+
+//button pause
 procedure TForm1.btnpauseClick(Sender: TObject);
 begin
 Timer1.Enabled := false;
 Timer2.Enabled := false;
 Timer3.Enabled := false;
 
+  Button1.Enabled:=true;
+  btnpause.Enabled := false;
 
-btnpause.Enabled := false;
 
  saldo := StrToInt(Label2.Text);
 
@@ -98,18 +102,25 @@ else
     btnplay.Enabled := true;
 end;
 
+
+
+//button play
 procedure TForm1.btnplayClick(Sender: TObject);
 begin
+Button1.Enabled:=false;
 saldo := StrToInt(Label2.Text);
-if(StrToIntDef(ComboBox1.Selected.Text, 0) = 0)then
+
+
+if(StrToIntDef(ComboBox1.Selected.Text, 0) = 0)then // verifica se nao foi informado aposta
   begin
     ShowMessage('selecione um valor antes de apostar!');
   end
-  else if(saldo = 0) then
+
+  else if(saldo = 0) then   //   verifica se o saldo é igual a 0
     begin
       ShowMessage('Seu Saldo é 0 Reinicie o Jogo, Para Uma Nova Partida!');
     end
-      else
+      else    // senao aposta normalmente
       begin
         Timer1.Enabled := True;
         Timer2.Enabled := True;
@@ -119,55 +130,73 @@ if(StrToIntDef(ComboBox1.Selected.Text, 0) = 0)then
 
         btnpause.Enabled := true;
         btnplay.Enabled := false;
-
-
-
   end;
 
 
 end;
 
+
+//button reset
 procedure TForm1.Button1Click(Sender: TObject);
 begin
 saldo := 2000;
 Label2.Text := IntToStr(saldo);
 ComboBox1.ItemIndex:= 0;
+Rectangle1.ImagemByName('item 0');
+Rectangle2.ImagemByName('item 0');
+Rectangle3.ImagemByName('item 0');
 end;
 
 
+
+//form
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+Rectangle1.ImagemByName('item 0');
+Rectangle2.ImagemByName('item 0');
+Rectangle3.ImagemByName('item 0');
 btnpause.Enabled := false;
+Button1.Enabled:= false;
 end;
 
 
+
+
+//Timer 1
 procedure TForm1.Timer1Timer(Sender: TObject);
 begin
   Randomize;
-  n1:=Random(9);
-  //lbn1.Text:=IntToStr(n1);
+
+  n1:= random(9);
+
   Rectangle1.ImagemByName('item '+ IntToStr(n1));
 
 end;
 
+
+
+//Timer 2
 procedure TForm1.Timer2Timer(Sender: TObject);
 begin
   Randomize;
   n2:=Random(9);
-  //lbn2.Text:=IntToStr(n2);
+
   Rectangle2.ImagemByName('item '+ IntToStr(n2));
 end;
 
+
+//Timer 3
 procedure TForm1.Timer3Timer(Sender: TObject);
 begin
   Randomize;
   n3:=Random(9);
-  //lbn3.Text:=IntToStr(n3);
+
   Rectangle3.ImagemByName('item '+ IntToStr(n3));
 end;
 
-{ TRectangleHelper }
 
+
+//procedure rectangle
 procedure TRectangleHelper.ImagemByName(Name: String);
 var
   item:TcustomBitmapItem;
