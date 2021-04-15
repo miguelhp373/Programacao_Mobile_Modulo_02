@@ -89,13 +89,13 @@ object Form1: TForm1
     TabOrder = 1
     ColumnCollection = <
       item
-        Value = 33.333333333333340000
+        Value = 33.333333333333330000
       end
       item
-        Value = 33.333333333333340000
+        Value = 33.333333333333330000
       end
       item
-        Value = 33.333333333333340000
+        Value = 33.333333333333330000
       end>
     ControlCollection = <
       item

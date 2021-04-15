@@ -34,8 +34,6 @@ type
     Rectangle1: TRectangle;
     Rectangle2: TRectangle;
     Rectangle3: TRectangle;
-    ImageList2: TImageList;
-    ImageList3: TImageList;
     procedure Timer1Timer(Sender: TObject);
     procedure Timer2Timer(Sender: TObject);
     procedure Timer3Timer(Sender: TObject);
@@ -68,6 +66,7 @@ Timer3.Enabled := false;
 
   Button1.Enabled:=true;
   btnpause.Enabled := false;
+  ComboBox1.Enabled:= true;
 
 
  saldo := StrToInt(Label2.Text);
@@ -109,9 +108,10 @@ end;
 //button play
 procedure TForm1.btnplayClick(Sender: TObject);
 begin
+
 Button1.Enabled:=false;
 saldo := StrToInt(Label2.Text);
-
+ComboBox1.Enabled:=false;
 
 if(StrToIntDef(ComboBox1.Selected.Text, 0) = 0)then // verifica se nao foi informado aposta
   begin
@@ -121,17 +121,23 @@ if(StrToIntDef(ComboBox1.Selected.Text, 0) = 0)then // verifica se nao foi infor
   else if(saldo = 0) then   //   verifica se o saldo é igual a 0
     begin
       ShowMessage('Seu Saldo é 0 Reinicie o Jogo, Para Uma Nova Partida!');
+      Button1.Enabled := true;
     end
+      else if(aposta>saldo)then //verifica se a aposta é maior que o saldo
+        begin
+          ShowMessage('Seu Saldo é Menor que a Aposta, Selecione Outro Valor Para Apostar');
+          Button1.Enabled := true;
+        end
       else    // senao aposta normalmente
-      begin
-        Timer1.Enabled := True;
-        Timer2.Enabled := True;
-        Timer3.Enabled := True;
+        begin
+          Timer1.Enabled := True;
+          Timer2.Enabled := True;
+          Timer3.Enabled := True;
 
-        aposta := StrToInt(ComboBox1.Selected.Text);
+          aposta := StrToInt(ComboBox1.Selected.Text);
 
-        btnpause.Enabled := true;
-        btnplay.Enabled := false;
+          btnpause.Enabled := true;
+          btnplay.Enabled := false;
   end;
 
 
@@ -143,6 +149,7 @@ procedure TForm1.Button1Click(Sender: TObject);
 begin
 saldo := 2000;
 Label2.Text := IntToStr(saldo);
+ComboBox1.Enabled:=true;
 ComboBox1.ItemIndex:= 0;
 Rectangle1.ImagemByName('item 0');
 Rectangle2.ImagemByName('item 0');
@@ -166,18 +173,10 @@ end;
 
 //Timer 1
 procedure TForm1.Timer1Timer(Sender: TObject);
-var
-  test:integer;
 begin
   Randomize;
 
   n1:= random(9);
-  test:= test + n1;
-    if(n1 = 8)then
-      begin
-        Timer1.Enabled:=false;
-        ShowMessage(IntToStr(test));
-      end;
 
   Rectangle1.ImagemByName('item '+ IntToStr(n1));
 
@@ -200,11 +199,6 @@ procedure TForm1.Timer3Timer(Sender: TObject);
 begin
   Randomize;
   n3:=Random(9);
-
-  if(n3 = 8)then
-      begin
-        n3:=0
-      end;
 
   Rectangle3.ImagemByName('item '+ IntToStr(n3));
 end;

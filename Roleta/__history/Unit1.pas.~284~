@@ -66,6 +66,7 @@ Timer3.Enabled := false;
 
   Button1.Enabled:=true;
   btnpause.Enabled := false;
+  ComboBox1.Enabled:= true;
 
 
  saldo := StrToInt(Label2.Text);
@@ -107,9 +108,10 @@ end;
 //button play
 procedure TForm1.btnplayClick(Sender: TObject);
 begin
+
 Button1.Enabled:=false;
 saldo := StrToInt(Label2.Text);
-
+ComboBox1.Enabled:=false;
 
 if(StrToIntDef(ComboBox1.Selected.Text, 0) = 0)then // verifica se nao foi informado aposta
   begin
@@ -119,6 +121,7 @@ if(StrToIntDef(ComboBox1.Selected.Text, 0) = 0)then // verifica se nao foi infor
   else if(saldo = 0) then   //   verifica se o saldo é igual a 0
     begin
       ShowMessage('Seu Saldo é 0 Reinicie o Jogo, Para Uma Nova Partida!');
+      Button1.Enabled := true;
     end
       else    // senao aposta normalmente
       begin
@@ -164,18 +167,10 @@ end;
 
 //Timer 1
 procedure TForm1.Timer1Timer(Sender: TObject);
-var
-  test:integer;
 begin
   Randomize;
 
   n1:= random(9);
-  test:= test + n1;
-    if(n1 = 8)then
-      begin
-        Timer1.Enabled:=false;
-        ShowMessage(IntToStr(test));
-      end;
 
   Rectangle1.ImagemByName('item '+ IntToStr(n1));
 
