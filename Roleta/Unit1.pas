@@ -101,6 +101,7 @@ else
         end;
   end;
     btnplay.Enabled := true;
+    ComboBox1.ItemIndex:= 0;
 end;
 
 
@@ -111,38 +112,41 @@ begin
 
 Button1.Enabled:=false;
 saldo := StrToInt(Label2.Text);
-
-
 aposta := StrToInt(ComboBox1.Selected.Text);
 
-if(StrToIntDef(ComboBox1.Selected.Text, 0) = 0)then // verifica se nao foi informado aposta
+if((StrToIntDef(ComboBox1.Selected.Text, 0) <> 0)and(saldo > 0)and(aposta <= saldo))then // verifica se nao foi informado aposta
   begin
-    ShowMessage('selecione um valor antes de apostar!');
+          aposta := StrToInt(ComboBox1.Selected.Text);
+          Timer1.Enabled := True;
+          Timer2.Enabled := True;
+          Timer3.Enabled := True;
+          ComboBox1.Enabled:=false;
+          btnpause.Enabled := true;
+          btnplay.Enabled := false;
+          //ShowMessage('1');
   end
 
   else if(saldo = 0) then   //   verifica se o saldo é igual a 0
     begin
+    //ShowMessage('2');
       ShowMessage('Seu Saldo é 0 Reinicie o Jogo, Para Uma Nova Partida!');
       Button1.Enabled := true;
+     // btnplay.Enabled := false;
     end
-      else if(aposta > saldo)then //verifica se a aposta é maior que o saldo
+       else if(aposta > saldo)then //verifica se a aposta é maior que o saldo
         begin
+        //ShowMessage('3');
           ShowMessage('Seu Saldo é Menor que a Aposta, Selecione Outro Valor Para Fazer a Apostar');
           Button1.Enabled := true;
           ComboBox1.Enabled:=true;
         end
-      else    // senao aposta normalmente
+      else   // senao aposta normalmente
         begin
-          Timer1.Enabled := True;
-          Timer2.Enabled := True;
-          Timer3.Enabled := True;
+        //ShowMessage('4');
+        ShowMessage('selecione um valor antes de apostar!');
 
-          //aposta := StrToInt(ComboBox1.Selected.Text);
-          ComboBox1.Enabled:=false;
-          btnpause.Enabled := true;
-          btnplay.Enabled := false;
+
   end;
-
 
 end;
 

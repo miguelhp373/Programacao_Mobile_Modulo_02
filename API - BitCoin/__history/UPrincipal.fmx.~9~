@@ -1,0 +1,171 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 302
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Panel1: TPanel
+    Align = Client
+    Size.Width = 302.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    object TabControl1: TTabControl
+      Align = Client
+      Size.Width = 302.000000000000000000
+      Size.Height = 480.000000000000000000
+      Size.PlatformDefault = False
+      TabIndex = 0
+      TabOrder = 0
+      TabPosition = PlatformDefault
+      Sizes = (
+        302s
+        430s
+        302s
+        430s
+        302s
+        430s)
+      object TabItem1: TTabItem
+        AutoSize = False
+        CustomIcon = <
+          item
+          end>
+        IsSelected = True
+        Size.Width = 100.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'BITCOIN'
+        object btncalcular: TButton
+          Position.Y = 126.000000000000000000
+          Size.Width = 305.000000000000000000
+          Size.Height = 43.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Converter'
+          OnClick = btncalcularClick
+        end
+        object btnclear: TButton
+          Position.X = -3.000000000000000000
+          Position.Y = 174.000000000000000000
+          Size.Width = 305.000000000000000000
+          Size.Height = 43.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Limpar'
+          OnClick = btnclearClick
+        end
+      end
+      object TabItem2: TTabItem
+        AutoSize = False
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 100.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'TabItem2'
+      end
+      object TabItem3: TTabItem
+        AutoSize = False
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 100.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'TabItem3'
+      end
+    end
+  end
+  object Label1: TLabel
+    Position.Y = 64.000000000000000000
+    Size.Width = 302.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'listboxheaderlabel'
+    TextSettings.HorzAlign = Center
+    Text = 'Valor em R$:'
+    TabOrder = 6
+  end
+  object editconvertbitcoin: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    TextSettings.HorzAlign = Center
+    Position.X = -3.000000000000000000
+    Position.Y = 120.000000000000000000
+    Size.Width = 305.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Edit2: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 0
+    TextSettings.HorzAlign = Center
+    Position.X = -3.000000000000000000
+    Position.Y = 344.000000000000000000
+    Size.Width = 305.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label2: TLabel
+    Position.Y = 288.000000000000000000
+    Size.Width = 302.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'listboxheaderlabel'
+    TextSettings.HorzAlign = Center
+    Text = 'Valor em BITCOIN:'
+    TabOrder = 4
+  end
+  object Label3: TLabel
+    Position.Y = 384.000000000000000000
+    Size.Width = 302.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'listboxheaderlabel'
+    TextSettings.HorzAlign = Center
+    Text = 'Quantidade De BITCOINS:'
+    TabOrder = 3
+  end
+  object Label4: TLabel
+    Position.X = -8.000000000000000000
+    Position.Y = 432.000000000000000000
+    Size.Width = 313.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'listboxheaderlabel'
+    TextSettings.HorzAlign = Center
+    Text = '....'
+    TabOrder = 2
+  end
+  object RESTClient1: TRESTClient
+    BaseURL = 'https://www.mercadobitcoin.net/api/BTC/ticker'
+    Params = <>
+    Left = 24
+    Top = 56
+  end
+  object RESTRequest1: TRESTRequest
+    Client = RESTClient1
+    Params = <>
+    Response = RESTResponse1
+    SynchronizedEvents = False
+    Left = 24
+    Top = 104
+  end
+  object RESTResponse1: TRESTResponse
+    Left = 24
+    Top = 160
+  end
+end
