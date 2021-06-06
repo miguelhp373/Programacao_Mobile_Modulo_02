@@ -1,0 +1,17 @@
+program PJ_Restaurante;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  U_Splash in 'U_Splash.pas' {FrSplash},
+  U_Menu in 'U_Menu.pas' {FrMenu},
+  uFormat in 'uFormat.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TFrSplash, FrSplash);
+  Application.CreateForm(TFrMenu, FrMenu);
+  Application.Run;
+end.
